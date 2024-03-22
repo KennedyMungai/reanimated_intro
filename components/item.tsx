@@ -8,7 +8,7 @@ type Props = {
 const Item = ({ item }: Props) => {
 	return (
 		<View>
-			<Text>Item</Text>
+			<Text>{item.title}</Text>
 		</View>
 	)
 }
