@@ -1,7 +1,14 @@
-import { Image, ScrollView, StyleSheet, Text, View } from 'react-native'
-import React from 'react'
-import { useLocalSearchParams } from 'expo-router'
 import { dummyData } from '@/assets/dummyData'
+import { useLocalSearchParams } from 'expo-router'
+import React from 'react'
+import { Image, ScrollView, StyleSheet, Text, View } from 'react-native'
+import Animated, {
+	FadeInLeft,
+	FadeInRight,
+	FadeInUp,
+	FadeOutLeft,
+	FadeOutRight
+} from 'react-native-reanimated'
 
 const DetailsPage = () => {
 	const { detailsId } = useLocalSearchParams()
@@ -12,9 +19,26 @@ const DetailsPage = () => {
 		<ScrollView style={styles.container}>
 			<Image source={{ uri: item.image }} style={styles.detailsImage} />
 			<View style={styles.detailsInfoView}>
-				<Text style={styles.itemTitle}>{item.title}</Text>
-				<Text style={styles.itemPrice}>${item.price}</Text>
-				<Text style={styles.itemDescription}>{item.description}</Text>
+				<Animated.Text
+					entering={FadeInRight.duration(500).delay(300)}
+					exiting={FadeOutLeft}
+					style={styles.itemTitle}
+				>
+					{item.title}
+				</Animated.Text>
+				<Animated.Text
+					entering={FadeInRight.duration(500).delay(300)}
+					exiting={FadeOutLeft}
+					style={styles.itemPrice}
+				>
+					${item.price}
+				</Animated.Text>
+				<Animated.Text
+					entering={FadeInUp.duration(400).delay(400)}
+					style={styles.itemDescription}
+				>
+					{item.description}
+				</Animated.Text>
 			</View>
 		</ScrollView>
 	)
