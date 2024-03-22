@@ -13,6 +13,8 @@ const ApplicationIndexPage = () => {
 
 	return (
 		<View style={styles.container}>
+			<Button onPress={startAnimation} title='Start Animation' />
+
 			<Animated.View
 				style={{
 					width: width,
@@ -20,8 +22,6 @@ const ApplicationIndexPage = () => {
 					backgroundColor: 'red'
 				}}
 			></Animated.View>
-
-			<Button onPress={startAnimation} title='Start Animation' />
 		</View>
 	)
 }
