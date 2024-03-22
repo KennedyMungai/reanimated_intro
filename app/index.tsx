@@ -3,7 +3,8 @@ import { Button, StyleSheet, TextInput, View } from 'react-native'
 import Animated, {
 	useAnimatedStyle,
 	useSharedValue,
-	withSpring
+	withSpring,
+	withTiming
 } from 'react-native-reanimated'
 
 const AnimatedInput = Animated.createAnimatedComponent(TextInput)
@@ -16,9 +17,12 @@ const ApplicationIndexPage = () => {
 	const startAnimation = () => {
 		const randomWidth = Math.floor(Math.random() * 300) + 100
 		const randomHeight = Math.floor(Math.random() * 300) + 100
+		const randomColor =
+			'#' + Math.floor(Math.random() * 16777215).toString(16)
 
-		width.value = withSpring(randomWidth, { duration: 1000 })
-		height.value = withSpring(randomHeight, { duration: 1000 })
+		width.value = withSpring(randomWidth)
+		height.value = withSpring(randomHeight)
+		backgroundColor.value = withTiming(randomColor, { duration: 1000 })
 	}
 
 	const animatedStyles = useAnimatedStyle(() => {
