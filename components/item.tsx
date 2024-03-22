@@ -8,7 +8,7 @@ type Props = {
 const Item = ({ item }: Props) => {
 	return (
 		<TouchableOpacity style={styles.container}>
-			<Image source={{ uri: item.image }} />
+			<Image source={{ uri: item.image }} style={styles.image} />
 			<View>
 				<Text>{item.title}</Text>
 			</View>
@@ -21,6 +21,12 @@ export default Item
 const styles = StyleSheet.create({
 	container: {
 		paddingHorizontal: 20,
-		paddingVertical: 10
+		paddingVertical: 10,
+		marginBottom: 20
+	},
+	image: {
+		width: '100%',
+		height: 300,
+		borderRadius: 6
 	}
 })
