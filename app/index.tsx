@@ -44,6 +44,7 @@ const ApplicationIndexPage = () => {
 		<FlatList
 			data={dummyData}
 			keyExtractor={(item) => item.id.toString()}
+			contentContainerStyle={styles.contentContainer}
 			showsVerticalScrollIndicator={false}
 			renderItem={({ item }) => <Item item={item} />}
 		/>
@@ -56,5 +57,8 @@ const styles = StyleSheet.create({
 	container: {
 		flex: 1,
 		paddingHorizontal: 10
+	},
+	contentContainer: {
+		marginBottom: 20
 	}
 })
