@@ -37,7 +37,7 @@ const DetailsPage = () => {
 					${item.price}
 				</Animated.Text>
 				<Animated.Text
-					entering={FadeInUp.duration(400).delay(400)}
+					entering={FadeInUp.duration(400).delay(600)}
 					style={styles.itemDescription}
 				>
 					{item.description}
