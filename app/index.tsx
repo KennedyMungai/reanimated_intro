@@ -22,7 +22,11 @@ const ApplicationIndexPage = () => {
 		// 	ref={flatListRef}
 		// 	onScroll={() => {}}
 		// />
-		<ScrollView ref={scrollViewRef} showsVerticalScrollIndicator={false}>
+		<ScrollView
+			ref={scrollViewRef}
+			showsVerticalScrollIndicator={false}
+			style={styles.container}
+		>
 			{dummyData.map((item, index) => (
 				<Item key={index} item={item} />
 			))}
