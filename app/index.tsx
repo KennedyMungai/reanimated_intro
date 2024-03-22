@@ -3,6 +3,7 @@ import Item from '@/components/item'
 import { Ionicons } from '@expo/vector-icons'
 import React from 'react'
 import { ScrollView, StyleSheet, TouchableOpacity } from 'react-native'
+import { withSpring } from 'react-native-reanimated'
 import Animated, {
 	useAnimatedRef,
 	useAnimatedStyle,
@@ -16,7 +17,7 @@ const ApplicationIndexPage = () => {
 
 	const buttonStyle = useAnimatedStyle(() => {
 		return {
-			opacity: scrollHandler.value < 500 ? 0 : 1
+			opacity: scrollHandler.value < 500 ? withSpring(0) : withSpring(1)
 		}
 	})
 
