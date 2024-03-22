@@ -7,7 +7,7 @@ const ApplicationIndexPage = () => {
 	const height = useSharedValue(0)
 
 	return (
-		<View>
+		<View style={styles.container}>
 			<Animated.View
 				style={{
 					width: width,
@@ -21,4 +21,9 @@ const ApplicationIndexPage = () => {
 
 export default ApplicationIndexPage
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+	container: {
+		flex: 1,
+		paddingHorizontal: 10
+	}
+})
