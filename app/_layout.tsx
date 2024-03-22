@@ -7,7 +7,7 @@ const MainApplicationLayout = () => {
 			<Stack.Screen name='index' options={{ title: 'Welcome' }} />
 			<Stack.Screen
 				name='details/[detailsId]'
-				options={{ title: 'Details' }}
+				options={{ title: 'Details', headerTransparent: true }}
 			/>
 		</Stack>
 	)
