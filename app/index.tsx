@@ -1,15 +1,7 @@
+import { dummyData } from '@/assets/dummyData'
 import Item from '@/components/item'
-import { useQuery } from '@tanstack/react-query'
-import axios from 'axios'
 import React from 'react'
-import {
-	ActivityIndicator,
-	FlatList,
-	StyleSheet,
-	Text,
-	TextInput,
-	View
-} from 'react-native'
+import { FlatList, StyleSheet, TextInput } from 'react-native'
 import Animated, {
 	useAnimatedStyle,
 	useSharedValue,
@@ -23,13 +15,6 @@ const ApplicationIndexPage = () => {
 	const width = useSharedValue(200)
 	const height = useSharedValue(200)
 	const backgroundColor = useSharedValue('teal')
-
-	const { data, isPending, isError, error } = useQuery<ShoppingItem[]>({
-		queryKey: ['fakeStoreAPI'],
-		queryFn: () => {
-			return axios.get('https://fakestoreapi.com/products')
-		}
-	})
 
 	const startAnimation = () => {
 		const randomWidth = Math.floor(Math.random() * 300) + 100
@@ -55,39 +40,9 @@ const ApplicationIndexPage = () => {
 		}
 	})
 
-	if (isPending) {
-		return (
-			<View
-				style={[
-					styles.container,
-					{ flex: 1, alignItems: 'center', justifyContent: 'center' }
-				]}
-			>
-				<ActivityIndicator />
-			</View>
-		)
-	}
-
-	if (isError) {
-		return (
-			<View
-				style={[
-					styles.container,
-					{ flex: 1, alignItems: 'center', justifyContent: 'center' }
-				]}
-			>
-				<Text
-					style={{ fontSize: 20, color: 'red', fontWeight: 'bold' }}
-				>
-					Something went wrong: {error.message}
-				</Text>
-			</View>
-		)
-	}
-
 	return (
 		<FlatList
-			data={data}
+			data={dummyData}
 			keyExtractor={(item) => item.id.toString()}
 			renderItem={({ item }) => <Item item={item} />}
 		/>
