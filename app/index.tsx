@@ -20,8 +20,8 @@ const ApplicationIndexPage = () => {
 
 			<Animated.View
 				style={{
-					width: width,
-					height: height,
+					width,
+					height,
 					backgroundColor: 'red'
 				}}
 			></Animated.View>
