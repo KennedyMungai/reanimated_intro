@@ -7,8 +7,11 @@ const ApplicationIndexPage = () => {
 	const height = useSharedValue(200)
 
 	const startAnimation = () => {
-		width.value = withTiming(Math.random() * 300)
-		height.value = withTiming(Math.random() * 300)
+		const randomWidth = Math.floor(Math.random() * 300) + 100
+		const randomHeight = Math.floor(Math.random() * 300) + 100
+
+		width.value = withTiming(randomWidth, { duration: 1000 })
+		height.value = withTiming(randomHeight, { duration: 1000 })
 	}
 
 	return (
