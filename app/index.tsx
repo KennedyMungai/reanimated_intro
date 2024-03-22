@@ -61,7 +61,7 @@ const ApplicationIndexPage = () => {
 						justifyContent: 'center'
 					}}
 				>
-					<Ionicons name='add-circle' size={32} color={'black'} />
+					<Ionicons name='chevron-up' size={32} color={'black'} />
 				</TouchableOpacity>
 			</Animated.View>
 		</>
