@@ -15,9 +15,9 @@ const ApplicationIndexPage = () => {
 	const scrollHandler = useScrollViewOffset(scrollViewRef)
 
 	const buttonStyle = useAnimatedStyle(() => {
-		console.log(scrollHandler.value)
-
-		return {}
+		return {
+			opacity: scrollHandler.value < 500 ? 0 : 1
+		}
 	})
 
 	const scrollTop = () => {}
@@ -58,7 +58,7 @@ const ApplicationIndexPage = () => {
 						justifyContent: 'center'
 					}}
 				>
-					<Ionicons name='add-circle' size={30} color={'black'} />
+					<Ionicons name='add-circle' size={32} color={'black'} />
 				</TouchableOpacity>
 			</Animated.View>
 		</>
