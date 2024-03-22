@@ -44,6 +44,7 @@ const ApplicationIndexPage = () => {
 		<FlatList
 			data={dummyData}
 			keyExtractor={(item) => item.id.toString()}
+			showsVerticalScrollIndicator={false}
 			renderItem={({ item }) => <Item item={item} />}
 		/>
 	)
