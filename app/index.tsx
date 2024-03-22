@@ -37,7 +37,20 @@ const ApplicationIndexPage = () => {
 	return (
 		<View style={styles.container}>
 			<Button onPress={startAnimation} title='Start Animation' />
-			<AnimatedInput style={[animatedInputStyles]} />
+			<AnimatedInput
+				style={[
+					animatedInputStyles,
+					{
+						height: 50,
+						margin: 10,
+						color: 'white',
+						paddingHorizontal: 10,
+						borderRadius: 6,
+						fontWeight: '600',
+						fontSize: 16
+					}
+				]}
+			/>
 			<Animated.View style={animatedStyles}></Animated.View>
 		</View>
 	)
