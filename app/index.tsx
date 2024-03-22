@@ -1,10 +1,10 @@
+import Item from '@/components/item'
 import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
 import React from 'react'
 import {
 	ActivityIndicator,
-	Button,
-	ScrollView,
+	FlatList,
 	StyleSheet,
 	Text,
 	TextInput,
@@ -24,7 +24,7 @@ const ApplicationIndexPage = () => {
 	const height = useSharedValue(200)
 	const backgroundColor = useSharedValue('teal')
 
-	const { data, isPending, isError, error } = useQuery({
+	const { data, isPending, isError, error } = useQuery<ShoppingItem[]>({
 		queryKey: ['fakeStoreAPI'],
 		queryFn: () => {
 			return axios.get('https://fakestoreapi.com/products')
@@ -86,24 +86,11 @@ const ApplicationIndexPage = () => {
 	}
 
 	return (
-		<ScrollView style={styles.container}>
-			<Button onPress={startAnimation} title='Start Animation' />
-			<AnimatedInput
-				style={[
-					animatedInputStyles,
-					{
-						height: 50,
-						margin: 10,
-						color: 'white',
-						paddingHorizontal: 10,
-						borderRadius: 6,
-						fontWeight: '600',
-						fontSize: 16
-					}
-				]}
-			/>
-			<Animated.View style={animatedStyles}></Animated.View>
-		</ScrollView>
+		<FlatList
+			data={data}
+			keyExtractor={(item) => item.id.toString()}
+			renderItem={({ item }) => <Item item={item} />}
+		/>
 	)
 }
 
