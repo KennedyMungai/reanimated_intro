@@ -16,7 +16,10 @@ const DetailsPage = () => {
 	const item = dummyData.filter((item) => item.id.toString() === detailsId)[0]
 
 	return (
-		<ScrollView style={styles.container}>
+		<ScrollView
+			style={styles.container}
+			showsVerticalScrollIndicator={false}
+		>
 			<Image source={{ uri: item.image }} style={styles.detailsImage} />
 			<View style={styles.detailsInfoView}>
 				<Animated.Text
