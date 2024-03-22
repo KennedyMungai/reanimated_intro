@@ -52,7 +52,7 @@ const ApplicationIndexPage = () => {
 					onPress={scrollTop}
 					style={{
 						padding: 6,
-						backgroundColor: 'white',
+						backgroundColor: '#FFFFFF80',
 						borderRadius: 50,
 						alignItems: 'center',
 						justifyContent: 'center'
