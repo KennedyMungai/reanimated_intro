@@ -20,7 +20,11 @@ const DetailsPage = () => {
 			style={styles.container}
 			showsVerticalScrollIndicator={false}
 		>
-			<Image source={{ uri: item.image }} style={styles.detailsImage} />
+			<Animated.Image
+				source={{ uri: item.image }}
+				style={styles.detailsImage}
+				sharedTransitionTag={`image-${item.id}`}
+			/>
 			<View style={styles.detailsInfoView}>
 				<Animated.Text
 					entering={FadeInRight.duration(500).delay(300)}

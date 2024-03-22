@@ -1,6 +1,7 @@
 import { Link } from 'expo-router'
 import React from 'react'
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import Animated from 'react-native-reanimated'
 
 type Props = {
 	item: ShoppingItem
@@ -10,7 +11,11 @@ const Item = ({ item }: Props) => {
 	return (
 		<Link href={`/details/${item.id.toString()}`} asChild>
 			<TouchableOpacity style={styles.cardContainer}>
-				<Image source={{ uri: item.image }} style={styles.image} />
+				<Animated.Image
+					source={{ uri: item.image }}
+					style={styles.image}
+					sharedTransitionTag={`image-${item.id}`}
+				/>
 				<View style={styles.infoContainer}>
 					<Text style={styles.itemTitle}>{item.title}</Text>
 					<Text style={styles.itemPriceText}>$ {item.price}</Text>
