@@ -1,13 +1,11 @@
 import { dummyData } from '@/assets/dummyData'
 import { useLocalSearchParams } from 'expo-router'
 import React from 'react'
-import { Image, ScrollView, StyleSheet, Text, View } from 'react-native'
+import { ScrollView, StyleSheet, View } from 'react-native'
 import Animated, {
-	FadeInLeft,
 	FadeInRight,
 	FadeInUp,
-	FadeOutLeft,
-	FadeOutRight
+	FadeOutLeft
 } from 'react-native-reanimated'
 
 const DetailsPage = () => {
