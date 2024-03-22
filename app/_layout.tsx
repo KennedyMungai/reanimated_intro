@@ -1,10 +1,8 @@
-import { Stack } from 'expo-router';
-import React from 'react';
+import { Stack } from 'expo-router'
+import React from 'react'
 
 const MainApplicationLayout = () => {
-  return (
-    <Stack></Stack>
-  )
+	return <Stack></Stack>
 }
 
 export default MainApplicationLayout
