@@ -28,7 +28,6 @@ const ApplicationIndexPage = () => {
 	return (
 		<View style={styles.container}>
 			<Button onPress={startAnimation} title='Start Animation' />
-
 			<Animated.View style={animatedStyles}></Animated.View>
 		</View>
 	)
