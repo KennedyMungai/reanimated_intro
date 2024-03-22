@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 
 type Props = {
 	item: ShoppingItem
@@ -8,6 +8,7 @@ type Props = {
 const Item = ({ item }: Props) => {
 	return (
 		<TouchableOpacity style={styles.container}>
+			<Image source={{ uri: item.image }} />
 			<View>
 				<Text>{item.title}</Text>
 			</View>
