@@ -2,8 +2,11 @@ import { dummyData } from '@/assets/dummyData'
 import Item from '@/components/item'
 import React from 'react'
 import { FlatList, StyleSheet } from 'react-native'
+import { useAnimatedRef } from 'react-native-reanimated'
 
 const ApplicationIndexPage = () => {
+	const flatListRef = useAnimatedRef<FlatList>()
+
 	return (
 		<FlatList
 			data={dummyData}
