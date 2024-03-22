@@ -1,6 +1,7 @@
 import React from 'react'
 import { StyleSheet, View } from 'react-native'
-import { useSharedValue } from 'react-native-reanimated'
+import Animated, { useSharedValue } from 'react-native-reanimated'
+import { AnimatedScrollView } from 'react-native-reanimated/lib/typescript/reanimated2/component/ScrollView'
 
 const ApplicationIndexPage = () => {
 	const width = useSharedValue(0)
@@ -8,13 +9,13 @@ const ApplicationIndexPage = () => {
 
 	return (
 		<View>
-			<View
+			<Animated.View
 				style={{
 					width: width.value,
 					height: height.value,
 					backgroundColor: 'tomato'
 				}}
-			></View>
+			></Animated.View>
 		</View>
 	)
 }
