@@ -8,7 +8,7 @@ type Props = {
 
 const Item = ({ item }: Props) => {
 	return (
-		<Link href={`/${item.id}`} asChild>
+		<Link href={`/details/${item.id.toString()}`} asChild>
 			<TouchableOpacity style={styles.cardContainer}>
 				<Image source={{ uri: item.image }} style={styles.image} />
 				<View style={styles.infoContainer}>
