@@ -6,7 +6,7 @@ const DetailsPage = () => {
 	const { detailsId } = useLocalSearchParams()
 
 	return (
-		<View>
+		<View style={styles.container}>
 			<Text>{detailsId}</Text>
 		</View>
 	)
@@ -14,4 +14,9 @@ const DetailsPage = () => {
 
 export default DetailsPage
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+	container: {
+		flex: 1,
+		backgroundColor: 'white'
+	}
+})
