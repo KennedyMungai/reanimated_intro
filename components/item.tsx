@@ -11,6 +11,7 @@ const Item = ({ item }: Props) => {
 			<Image source={{ uri: item.image }} style={styles.image} />
 			<View style={styles.infoContainer}>
 				<Text style={styles.itemTitle}>{item.title}</Text>
+				<Text style={styles.itemPriceText}>$ {item.price}</Text>
 			</View>
 		</TouchableOpacity>
 	)
@@ -21,10 +22,10 @@ export default Item
 const styles = StyleSheet.create({
 	cardContainer: {
 		marginHorizontal: 10,
-		paddingVertical: 10,
+		paddingBottom: 20,
 		marginBottom: 20,
 		backgroundColor: 'white',
-		borderRadius: 6
+		borderRadius: 10
 	},
 	image: {
 		width: '100%',
@@ -33,10 +34,14 @@ const styles = StyleSheet.create({
 	},
 	itemTitle: {
 		fontWeight: '500',
-		fontSize: 16,
+		fontSize: 18,
 		color: '#00000090'
 	},
 	infoContainer: {
 		paddingHorizontal: 20
+	},
+	itemPriceText: {
+		fontSize: 14,
+		fontWeight: 'bold'
 	}
 })
