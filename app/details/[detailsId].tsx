@@ -3,11 +3,11 @@ import React from 'react'
 import { useLocalSearchParams } from 'expo-router'
 
 const DetailsPage = () => {
-	const params = useLocalSearchParams
+	const { detailsId } = useLocalSearchParams()
 
 	return (
 		<View>
-			<Text>Details</Text>
+			<Text>{detailsId}</Text>
 		</View>
 	)
 }
