@@ -1,7 +1,8 @@
 import { dummyData } from '@/assets/dummyData'
 import Item from '@/components/item'
+import { Ionicons } from '@expo/vector-icons'
 import React from 'react'
-import { ScrollView, StyleSheet } from 'react-native'
+import { ScrollView, StyleSheet, TouchableOpacity } from 'react-native'
 import Animated, {
 	useAnimatedRef,
 	useAnimatedStyle,
@@ -18,6 +19,8 @@ const ApplicationIndexPage = () => {
 
 		return {}
 	})
+
+	const scrollTop = () => {}
 
 	return (
 		// <Animated.FlatList
@@ -39,6 +42,25 @@ const ApplicationIndexPage = () => {
 					<Item key={index} item={item} />
 				))}
 			</Animated.ScrollView>
+			<Animated.View
+				style={[
+					{ position: 'absolute', bottom: 20, right: 20 },
+					buttonStyle
+				]}
+			>
+				<TouchableOpacity
+					onPress={scrollTop}
+					style={{
+						padding: 6,
+						backgroundColor: 'white',
+						borderRadius: 50,
+						alignItems: 'center',
+						justifyContent: 'center'
+					}}
+				>
+					<Ionicons name='add-circle' size={30} color={'black'} />
+				</TouchableOpacity>
+			</Animated.View>
 		</>
 	)
 }
