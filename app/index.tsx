@@ -1,11 +1,19 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, View } from 'react-native'
+import { useSharedValue } from 'react-native-reanimated'
 
 const ApplicationIndexPage = () => {
+	const width = useSharedValue(0)
+	const height = useSharedValue(0)
+
 	return (
 		<View>
 			<View
-				style={{ width: 150, height: 150, backgroundColor: 'tomato' }}
+				style={{
+					width: width.value,
+					height: height.value,
+					backgroundColor: 'tomato'
+				}}
 			></View>
 		</View>
 	)
