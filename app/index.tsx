@@ -2,18 +2,19 @@ import { dummyData } from '@/assets/dummyData'
 import Item from '@/components/item'
 import React from 'react'
 import { FlatList, StyleSheet } from 'react-native'
-import { useAnimatedRef } from 'react-native-reanimated'
+import Animated, { useAnimatedRef } from 'react-native-reanimated'
 
 const ApplicationIndexPage = () => {
 	const flatListRef = useAnimatedRef<FlatList>()
 
 	return (
-		<FlatList
+		<Animated.FlatList
 			data={dummyData}
 			keyExtractor={(item) => item.id.toString()}
 			contentContainerStyle={styles.contentContainer}
 			showsVerticalScrollIndicator={false}
 			renderItem={({ item }) => <Item item={item} />}
+			ref={flatListRef}
 		/>
 	)
 }
