@@ -3,8 +3,8 @@ import { StyleSheet, View } from 'react-native'
 import Animated, { useSharedValue } from 'react-native-reanimated'
 
 const ApplicationIndexPage = () => {
-	const width = useSharedValue(0)
-	const height = useSharedValue(0)
+	const width = useSharedValue(200)
+	const height = useSharedValue(200)
 
 	return (
 		<View style={styles.container}>
@@ -12,7 +12,7 @@ const ApplicationIndexPage = () => {
 				style={{
 					width: width,
 					height: height,
-					backgroundColor: 'tomato'
+					backgroundColor: 'red'
 				}}
 			></Animated.View>
 		</View>
