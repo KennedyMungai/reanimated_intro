@@ -1,6 +1,10 @@
 import React from 'react'
 import { Button, StyleSheet, View } from 'react-native'
-import Animated, { useSharedValue, withSpring } from 'react-native-reanimated'
+import Animated, {
+	useAnimatedStyle,
+	useSharedValue,
+	withSpring
+} from 'react-native-reanimated'
 
 const ApplicationIndexPage = () => {
 	const width = useSharedValue(200)
@@ -14,17 +18,18 @@ const ApplicationIndexPage = () => {
 		height.value = withSpring(randomHeight, { duration: 1000 })
 	}
 
+	const animatedStyles = useAnimatedStyle(() => {
+		return {
+			width: width.value,
+			height: height.value
+		}
+	})
+
 	return (
 		<View style={styles.container}>
 			<Button onPress={startAnimation} title='Start Animation' />
 
-			<Animated.View
-				style={{
-					width,
-					height,
-					backgroundColor: 'red'
-				}}
-			></Animated.View>
+			<Animated.View style={animatedStyles}></Animated.View>
 		</View>
 	)
 }
