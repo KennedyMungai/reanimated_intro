@@ -1,16 +1,23 @@
 import { dummyData } from '@/assets/dummyData'
 import Item from '@/components/item'
 import React from 'react'
-import { FlatList, ScrollView, StyleSheet } from 'react-native'
+import { ScrollView, StyleSheet } from 'react-native'
 import Animated, {
 	useAnimatedRef,
+	useAnimatedStyle,
 	useScrollViewOffset
 } from 'react-native-reanimated'
 
 const ApplicationIndexPage = () => {
-	const scrollViewRef = useAnimatedRef<ScrollView>()
+	const scrollViewRef = useAnimatedRef<Animated.ScrollView>()
 
-	// const scrollHandler = useScrollViewOffset(flatListRef)
+	const scrollHandler = useScrollViewOffset(scrollViewRef)
+
+	const buttonStyle = useAnimatedStyle(() => {
+		console.log(scrollHandler.value)
+
+		return {}
+	})
 
 	return (
 		// <Animated.FlatList
