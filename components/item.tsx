@@ -1,5 +1,5 @@
-import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 
 type Props = {
 	item: ShoppingItem
@@ -7,12 +7,19 @@ type Props = {
 
 const Item = ({ item }: Props) => {
 	return (
-		<View>
-			<Text>{item.title}</Text>
-		</View>
+		<TouchableOpacity style={styles.container}>
+			<View>
+				<Text>{item.title}</Text>
+			</View>
+		</TouchableOpacity>
 	)
 }
 
 export default Item
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+	container: {
+		paddingHorizontal: 20,
+		paddingVertical: 10
+	}
+})
