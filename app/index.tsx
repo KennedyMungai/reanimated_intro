@@ -4,8 +4,6 @@ import React from 'react'
 import { FlatList, StyleSheet, TextInput } from 'react-native'
 import Animated from 'react-native-reanimated'
 
-const AnimatedInput = Animated.createAnimatedComponent(TextInput)
-
 const ApplicationIndexPage = () => {
 	return (
 		<FlatList
