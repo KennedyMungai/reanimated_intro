@@ -11,6 +11,9 @@ const DetailsPage = () => {
 	return (
 		<ScrollView style={styles.container}>
 			<Image source={{ uri: item.image }} style={styles.detailsImage} />
+			<View style={styles.detailsInfoView}>
+				<Text style={styles.itemTitle}>{item.title}</Text>
+			</View>
 		</ScrollView>
 	)
 }
@@ -25,5 +28,13 @@ const styles = StyleSheet.create({
 	detailsImage: {
 		width: '100%',
 		height: 400
+	},
+	detailsInfoView: {
+		padding: 20
+	},
+	itemTitle: {
+		fontSize: 24,
+		fontWeight: '500',
+		color: '#00000090'
 	}
 })
