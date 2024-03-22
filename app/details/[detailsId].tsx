@@ -1,7 +1,9 @@
 import { dummyData } from '@/assets/dummyData'
+import GmailStyleSwipeableRow from '@/components/GmailStyleSwipeableRow'
+import axios from 'axios'
 import { useLocalSearchParams } from 'expo-router'
-import React from 'react'
-import { ScrollView, StyleSheet, View } from 'react-native'
+import React, { useEffect, useState } from 'react'
+import { ScrollView, StyleSheet, Text, View } from 'react-native'
 import Animated, {
 	FadeInRight,
 	FadeInUp,
@@ -10,6 +12,15 @@ import Animated, {
 
 const DetailsPage = () => {
 	const { detailsId } = useLocalSearchParams()
+
+	const [people, setPeople] = useState([])
+
+	useEffect(() => {
+		axios
+			.get('https://randomuser.me/api/?results=50')
+			.then((res) => res.data)
+			.then((data) => setPeople(data))
+	}, [])
 
 	const item = dummyData.filter((item) => item.id.toString() === detailsId)[0]
 
@@ -44,6 +55,21 @@ const DetailsPage = () => {
 				>
 					{item.description}
 				</Animated.Text>
+
+				<View>
+					{people.map((person: Result, index) => (
+						<GmailStyleSwipeableRow key={index}>
+							<View
+								style={{
+									padding: 10,
+									backgroundColor: '#f9f9f9'
+								}}
+							>
+								<Text>{person?.name.first}</Text>
+							</View>
+						</GmailStyleSwipeableRow>
+					))}
+				</View>
 			</View>
 		</ScrollView>
 	)
