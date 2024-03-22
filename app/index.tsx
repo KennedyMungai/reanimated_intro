@@ -1,8 +1,7 @@
 import { dummyData } from '@/assets/dummyData'
 import Item from '@/components/item'
 import React from 'react'
-import { FlatList, StyleSheet, TextInput } from 'react-native'
-import Animated from 'react-native-reanimated'
+import { FlatList, StyleSheet } from 'react-native'
 
 const ApplicationIndexPage = () => {
 	return (
