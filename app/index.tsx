@@ -4,7 +4,9 @@ import { StyleSheet, Text, View } from 'react-native'
 const ApplicationIndexPage = () => {
 	return (
 		<View>
-			<Text>ApplicationIndexPage</Text>
+			<View
+				style={{ width: 150, height: 150, backgroundColor: 'tomato' }}
+			></View>
 		</View>
 	)
 }
