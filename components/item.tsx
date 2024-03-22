@@ -1,3 +1,4 @@
+import { Link } from 'expo-router'
 import React from 'react'
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 
@@ -7,13 +8,15 @@ type Props = {
 
 const Item = ({ item }: Props) => {
 	return (
-		<TouchableOpacity style={styles.cardContainer}>
-			<Image source={{ uri: item.image }} style={styles.image} />
-			<View style={styles.infoContainer}>
-				<Text style={styles.itemTitle}>{item.title}</Text>
-				<Text style={styles.itemPriceText}>$ {item.price}</Text>
-			</View>
-		</TouchableOpacity>
+		<Link href={`/${item.id}`} asChild>
+			<TouchableOpacity style={styles.cardContainer}>
+				<Image source={{ uri: item.image }} style={styles.image} />
+				<View style={styles.infoContainer}>
+					<Text style={styles.itemTitle}>{item.title}</Text>
+					<Text style={styles.itemPriceText}>$ {item.price}</Text>
+				</View>
+			</TouchableOpacity>
+		</Link>
 	)
 }
 
