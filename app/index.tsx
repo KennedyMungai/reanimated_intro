@@ -21,7 +21,9 @@ const ApplicationIndexPage = () => {
 		}
 	})
 
-	const scrollTop = () => {}
+	const scrollToTop = () => {
+		scrollViewRef.current?.scrollTo({ x: 0, y: 0, animated: true })
+	}
 
 	return (
 		// <Animated.FlatList
@@ -50,7 +52,7 @@ const ApplicationIndexPage = () => {
 				]}
 			>
 				<TouchableOpacity
-					onPress={scrollTop}
+					onPress={scrollToTop}
 					style={{
 						padding: 6,
 						backgroundColor: '#FFFFFF80',
