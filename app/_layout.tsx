@@ -5,7 +5,10 @@ const MainApplicationLayout = () => {
 	return (
 		<Stack>
 			<Stack.Screen name='index' options={{ title: 'Welcome' }} />
-			<Stack.Screen name='[detailsId]' options={{ title: 'Details' }} />
+			<Stack.Screen
+				name='details/[detailsId]'
+				options={{ title: 'Details' }}
+			/>
 		</Stack>
 	)
 }
