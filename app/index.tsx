@@ -1,14 +1,14 @@
 import React from 'react'
 import { Button, StyleSheet, View } from 'react-native'
-import Animated, { useSharedValue } from 'react-native-reanimated'
+import Animated, { useSharedValue, withTiming } from 'react-native-reanimated'
 
 const ApplicationIndexPage = () => {
 	const width = useSharedValue(200)
 	const height = useSharedValue(200)
 
 	const startAnimation = () => {
-		width.value = Math.random() * 300
-		height.value = Math.random() * 300
+		width.value = withTiming(Math.random() * 300)
+		height.value = withTiming(Math.random() * 300)
 	}
 
 	return (
